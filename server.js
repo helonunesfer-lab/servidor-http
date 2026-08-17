@@ -9,7 +9,7 @@ server.on('request', (req, res) => {
 
     res.statusCode = 201
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ status: "ok" }));    
+       //o res end finaiza o ciclo  entao sem ele,trava
 });
 
 server.listen(porta, ()=> {
