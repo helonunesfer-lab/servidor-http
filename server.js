@@ -9,7 +9,7 @@ server.on('request', (req, res) => {
 
     res.statusCode = 201
     res.setHeader('Content-Type', 'application/json');
-    res.end("Recurso Criado");    
+    res.end(JSON.stringify({ status: "ok" }));    
 });
 
 server.listen(porta, ()=> {
