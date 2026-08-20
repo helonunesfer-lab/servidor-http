@@ -17,6 +17,7 @@ const produtos = [
 
 
 const server = http.createServer((req, res) => {
+    console.log(`Método: ${req.method} | URL:${req.url})
     const urlObj = new URL(req.url, `http://${req.headers.host}`)
     res.statusCode = 404;
     res.setHeader('Content-Type', 'application/json');
@@ -26,7 +27,8 @@ const server = http.createServer((req, res) => {
         return res.end(JSON.stringify({
             "numero_telefone": "67 99999-9999",
             "endereco": "Rua da Alegria, 99"
-        }));
+        })
+    );
     }
 
     if (req.method == "GET" && urlObj.pathname == "/produtos") {
